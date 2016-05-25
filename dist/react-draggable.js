@@ -646,7 +646,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	// Get from offsetParent
 	function offsetXYFromParentOf(evt /*: {clientX: number, clientY: number}*/, node /*: HTMLElement & {offsetParent: HTMLElement}*/) /*: ControlPosition*/ {
-	  var offsetParent = node.offsetParent || document.body;
+	  var offsetParent = node.offsetParent || node.parentNode || document.body;
 	  var offsetParentRect = node.offsetParent === document.body ? { left: 0, top: 0 } : offsetParent.getBoundingClientRect();
 	
 	  var x = evt.clientX + offsetParent.scrollLeft - offsetParentRect.left;
